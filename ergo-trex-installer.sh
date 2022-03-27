@@ -31,5 +31,5 @@ WantedBy=multi-user.target
 
 sudo systemctl daemon-reload
 
-sudo systemctl enable ergo-trex.service
+#sudo systemctl enable ergo-trex.service
 
