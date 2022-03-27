@@ -13,7 +13,7 @@ wget https://github.com/trexminer/T-Rex/releases/download/0.25.9/t-rex-0.25.9-li
 mkdir /usr/bin/t-rex
 tar -xf t-rex-0.25.9-linux.tar.gz -C /usr/bin/t-rex
 sudo echo "#!/bin/bash
-/usr/bin/t-rex/t-rex -a autolykos2 -o stratum+tcp://erg.2miners.com:8888 -u $wallet.$name -w $name --api-bind-html $ipBind
+/usr/bin/t-rex/t-rex -a autolykos2 -o stratum+tcp://erg.2miners.com:8888 -u $wallet.$name -w $name --api-bind-http $ipBind
 " > /usr/bin/ergo-trex.sh
 chmod +x /usr/bin/ergo-trex.sh
 
