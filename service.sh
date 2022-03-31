@@ -10,7 +10,7 @@ sudo echo "
 Description=$1 $3 Script
 
 [Service]
-ExecStart=/usr/bin/$2-$4.sh
+ExecStart=/usr/bin/minerUtils/$2-$4.sh
 
 [Install]
 WantedBy=multi-user.target
