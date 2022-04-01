@@ -4,7 +4,7 @@ source input.sh
 software_options=(   "Gminer"  "TREX"  "LOL MINER" )
 file=(   "gminer"  "trex"  "lolminer" )
 gminer="aeternity cortex etc eth eth_ton eth_zil eth_zil_shardpool ravencoin ton zelcash"
-trex="eth cortex" 
+trex="eth cortex firo" 
 lolminer="eth cortex" 
 
 software_selection=( "false"      "false"      "false"    )
@@ -30,6 +30,11 @@ cortex="ctxc.2miners.com:2222 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
 
 setup_ravencoin="RAVENCOIN ravencoin Gminer gminer kawpow" 
 ravencoin="rvn.2miners.com:6060 RF6v2uPzxFry9ZyMwmMH16GkUFhtj9tNTu" 
+
+
+trex_firo="TRex trex firopow"
+setup_firo="FIRO firo"
+firo="stratum+tcp://firo.2miners.com:8181 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b" 
 
 
 setup_ton="TON ton Gminer gminer ton" 
