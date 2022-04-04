@@ -20,19 +20,51 @@ Choose between all software currently available.
 The selected one will be installed at this location :
 
     /usr/bin/***  
-*** =
-
-Gminer / gminer
-
-T-Rex  /  tex
-
-lolMiner / lolminer
+  *** =
+   Gminer / gminer
+   T-Rex  /  tex
+   lolMiner / lolminer
    
-## Services
+### Gminer
+#### Setup currency for gminer:
+##### select the currency that you want to setup with gminer
+ - aeternity 
+ - cortex
+ - etc 
+ - eth
+ - eth_ton
+ - eth_zil
+ - eth_zil_shardpool
+ - ravencoin
+ - ton
+ - zelcash
 
-To be done
+##### For each selected currency, you will need to setup the appropriate information:
+	
+| Question | exemple|
+|--|--|
+| Enter the pool | `ae.2miners.com:4040` |
+| Please enter the walletID |  `ak_v4cBSQhjh8gc49XMmrt1ELXJDA8U7sDZVKhLJiAzjPymVFgFQ` |
+| Enter your rig name| `ViveLeQuebec` |
+| Enter the port for webview| `4067` |
+##### To run the service : 
 
+`sudo systemctl start ******-gminer.service`<br>`sudo systemctl status ******-gminer.service`<br>`sudo systemctl stop ******-gminer.service`
 
+****** = Installed crypto
+
+### T-Rex
+##### Supported crypto
+
+ - cortex 
+ - eth 
+ - firo
+
+### lolMiner
+##### Supported crypto
+
+ - cortex 
+ - eth
 
 # Desinstallation
 
