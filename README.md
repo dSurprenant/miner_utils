@@ -20,10 +20,8 @@ Choose between all software currently available.
 The selected one will be installed at this location :
 
     /usr/bin/***  
-  *** =
-   Gminer / gminer
-   T-Rex  /  tex
-   lolMiner / lolminer
+  *** =<br>
+   Gminer / gminer<br>T-Rex  /  tex<br>lolMiner / lolminer<br>
    
 ### Gminer
 #### Setup currency for gminer:
