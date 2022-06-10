@@ -10,24 +10,13 @@ lolminer="eth cortex"
 software_selection=( "false"      "false"      "false"    )
 preselection2=( "false"      "false"      "false"    )
 
-gminer_aeternity="Gminer gminer aeternity"
-setup_aeternity="AETERNITY aeternity Gminer gminer aeternity"
-aeternity="ae.2miners.com:4040 ak_v4cBSQhjh8gc49XMmrt1ELXJDA8U7sDZVKhLJiAzjPymVFgFQ"
+gminer_aeternity="Gminer gminer aeternity aeternity ae.2miners.com:4040 ak_v4cBSQhjh8gc49XMmrt1ELXJDA8U7sDZVKhLJiAzjPymVFgFQ"
+gminer_etc="Gminer gminer ethash ethash etc.2miners.com:1010 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+gminer_eth="Gminer gminer ethash ethash etc.2miners.com:2020 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+gminer_cortex="Gminer gminer cortex cortex ctxc.2miners.com:2222 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
 
-gminer_etc="Gminer gminer ethash"
-setup_etc="ETC etc Gminer gminer ethash"
-etc="etc.2miners.com:1010 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
 
-gminer_eth="Gminer gminer ethash"
-trex_eth="TRex trex ethash"
-setup_eth="ETH eth Gminer gminer ethash"
-eth="eth.2miners.com:2020 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
-
-gminer_cortex="Gminer gminer cortex"
-trex_cortex="TRex trex cortex"
-setup_cortex="CORTEX cortex"
-cortex="ctxc.2miners.com:2222 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b" 
-
+trex_eth="Trex trex ethash ethash stratum+tcp://us-solo-eth.2miners.com:6060 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
 
 
 trex_ergo="TRex trex ergo"
@@ -75,41 +64,41 @@ for option in "${file[@]}"; do
     	#install software
     	sudo ./software/${option}.sh;
     	
-    	coinList=${option}
-    	sentence="${!coinList}"
-    	stringArray=($sentence)
-    	
+    	software=${option}
+    	selectedSoftwareCrypto=(${!software})
+    	#stringArray=($sentence)
+    	printf $selectedSoftwareCrypto
     	printf "\n"
 	echo -e "\e[34m***************************************************************\e[0m"
 	echo -e "\e[34m***************************************************************\e[0m"
-	echo -e "${bold}Setup $coinList"
+	echo -e "${bold}Setup $software"
 	echo -e "\e[34m***************************************************************\e[0m"
 	echo -e "\e[34m***************************************************************\e[0m"
 	echo -e "Choose your coin :"
 	printf "\n"
     	
-        multiselect result2 stringArray preselection2
+        multiselect selectedCrypto selectedSoftwareCrypto preselection2
      	printf "\n"
      	idx2=0
-     	for optionName in "${stringArray[@]}"; do
-     	   if [[ ${result2[idx2]} == true ]]; then 	
-     		itemList=${optionName}
-     		it="setup_"${optionName}
-     		sentence2="${!itemList}"
-     		stringArray2=($sentence2)
-     		echo ${sentence2}
+     	for crypto in "${selectedSoftwareCrypto[@]}"; do
+     	   if [[ ${selectedCrypto[idx2]} == true ]]; then 	
+     	
+     		it="setup_"${crypto}
+     		cryptoSetup=(${software}"_"${crypto})
+     		#stringArray2=($cryptoSetup)
      		
-     		it2=${coinList}"_"${optionName}
-     		sentence4="${!it2}"
+     		
+     		# it2=${software}"_"${crypto}
+     		# sentence4="${!it2}"
      	
      	
-     		sentence3="${!it}"
-     		stringArray2=($sentence3)
-     		echo "Setup ${stringArray2[0]} with ${coinList}"
-     		echo "***************************************************************"
-     		sudo ./${coinList}-setup.sh ${sentence3} ${sentence4} ${sentence2}
-     		printf "\n"
-     	        printf "\n"
+     		# sentence3="${!it}"
+     		# stringArray2=($sentence3)
+     		# echo "Setup ${stringArray2[0]} with ${software}"
+     		# echo "***************************************************************"
+     		sudo ./${software}-setup.sh ${!cryptoSetup}
+     		# printf "\n"
+     	    #     printf "\n"
      	
      	   fi
      

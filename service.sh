@@ -7,14 +7,14 @@
 
 sudo echo "
 [Unit]
-Description=$1 $3 Script
+Description=$2 $3 Script
 
 [Service]
-ExecStart=/usr/bin/minerUtils/$2-$4.sh
+ExecStart=/usr/bin/minerUtils/$1.sh
 
 [Install]
 WantedBy=multi-user.target
-" > /lib/systemd/system/$2-$4.service
+" > /lib/systemd/system/$1.service
 
 sudo systemctl daemon-reload
 
