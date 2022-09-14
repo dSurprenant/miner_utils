@@ -6,7 +6,7 @@ This script install selected miners software with all proper configurations as s
 Need git to be installed.
 
 # Get code from repo
-    git clone 
+    git clone https://github.com/dSurprenant/miner_utils.git
 
 # Installation
 
