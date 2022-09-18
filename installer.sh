@@ -1,46 +1,98 @@
 #!/bin/bash
+# include class header
+. obj.h
+. system.h
 source input.sh
 
-software_options=(   "Gminer"  "TREX"  "LOL MINER" )
-file=(   "gminer"  "trex"  "lolminer" )
-gminer="aeternity cortex etc eth eth_ton eth_zil eth_zil_shardpool ravencoin ton zelcash"
+defaultAddress="0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+
+rigName="ViveLeQuebec"
+# defaultAddress = "0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+
+# obj raven 
+# raven.algo="kawpow"
+# raven.name="ravencoin"
+# raven.adress=defaultAddress
+
+# obj eth 
+# eth.algo="ethash"
+# eth.name="eth"
+# eth.adress=defaultAddress
+
+
+zel="zel 125_4"
+zel+=" zel.2miners.com:9090"
+zel+=" ${defaultAddress}"
+zel+=" ${rigName}"
+
+etc="etherumC etchash"
+etc+=" etc.2miners.com:1010"
+etc+=" ${defaultAddress}"
+etc+=" ${rigName}"
+
+
+eth="etherum ethash"
+eth+=" eth.2miners.com:2020"
+eth+=" ${defaultAddress}"
+eth+=" ${rigName}"
+
+ravencoin="ravencoin kawpow"
+ravencoin+=" rvn.2miners.com:6060"
+ravencoin+=" ${defaultAddress}"
+ravencoin+=" ${rigName}"
+
+cortex="cortex cortex"
+cortex+=" ctxc.2miners.com:2222"
+cortex+=" ${defaultAddress}"
+cortex+=" ${rigName}"
+
+
+kaspa="kaspa kaspa"
+kaspa+=" pool.ca.woolypooly.com:3112"
+kaspa+=" ${defaultAddress}"
+kaspa+=" ${rigName}"
+
+software_options=(   "Gminer"  "TREX"  "LOL MINER", "BZMiner" )
+file=(   "gminer"  "trex"  "lolminer", "bzminer" )
+gminer="cortex etc eth ravencoin zel"
 trex="ergo eth cortex firo" 
+bzminer="raven kaspa" 
 lolminer="eth cortex" 
 
 software_selection=( "false"      "false"      "false"    )
 preselection2=( "false"      "false"      "false"    )
 
-gminer_aeternity="Gminer gminer aeternity aeternity ae.2miners.com:4040 ak_v4cBSQhjh8gc49XMmrt1ELXJDA8U7sDZVKhLJiAzjPymVFgFQ"
-gminer_etc="Gminer gminer ethash ethash etc.2miners.com:1010 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
-gminer_eth="Gminer gminer ethash ethash etc.2miners.com:2020 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
-gminer_cortex="Gminer gminer cortex cortex ctxc.2miners.com:2222 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+# gminer_aeternity="Gminer gminer aeternity aeternity ae.2miners.com:4040 ak_v4cBSQhjh8gc49XMmrt1ELXJDA8U7sDZVKhLJiAzjPymVFgFQ"
+# gminer_etc="Gminer gminer ethash ethash etc.2miners.com:1010 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+# gminer_eth="Gminer gminer ethash ethash etc.2miners.com:2020 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+# gminer_cortex="Gminer gminer cortex cortex ctxc.2miners.com:2222 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+# gminer_ravencoin="Gminer gminer ravencoin ravencoin ctxc.2miners.com:2222 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+
+# trex_eth="Trex trex ethash ethash stratum+tcp://us-solo-eth.2miners.com:6060 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
 
 
-trex_eth="Trex trex ethash ethash stratum+tcp://us-solo-eth.2miners.com:6060 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+# trex_ergo="TRex trex ergo"
+# setup_ergo="ERGO autolykos2"
+# ergo="stratum+tcp://erg.2miners.com:8888 9hjzUgDdzCzJGTnSkbREuRrXyCp3VDqzxnebrEjb7vYLJUY2yU7" 
 
 
-trex_ergo="TRex trex ergo"
-setup_ergo="ERGO autolykos2"
-ergo="stratum+tcp://erg.2miners.com:8888 9hjzUgDdzCzJGTnSkbREuRrXyCp3VDqzxnebrEjb7vYLJUY2yU7" 
+# setup_ravencoin="RAVENCOIN ravencoin Gminer gminer kawpow" 
+# ravencoin="rvn.2miners.com:6060 RF6v2uPzxFry9ZyMwmMH16GkUFhtj9tNTu" 
 
 
-setup_ravencoin="RAVENCOIN ravencoin Gminer gminer kawpow" 
-ravencoin="rvn.2miners.com:6060 RF6v2uPzxFry9ZyMwmMH16GkUFhtj9tNTu" 
+# trex_firo="TRex trex firopow"
+# setup_firo="FIRO firo"
+# firo="stratum+tcp://firo.2miners.com:8181 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b" 
 
 
-trex_firo="TRex trex firopow"
-setup_firo="FIRO firo"
-firo="stratum+tcp://firo.2miners.com:8181 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b" 
+# setup_ton="TON ton Gminer gminer ton" 
+# ton="wss://eu1.stratum.ton-pool.com/stratum 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b" 
 
+# setup_eth_ton="ETH+TON eth_ton Gminer gminer ethash"
+# eth_ton="eth.2miners.com:2020 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b dual wss://eu1.stratum.ton-pool.com/stratum 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
 
-setup_ton="TON ton Gminer gminer ton" 
-ton="wss://eu1.stratum.ton-pool.com/stratum 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b" 
-
-setup_eth_ton="ETH+TON eth_ton Gminer gminer ethash"
-eth_ton="eth.2miners.com:2020 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b dual wss://eu1.stratum.ton-pool.com/stratum 0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
-
-setup_zelcash="TON ton Gminer gminer 125_4" 
-zelcash="zel.2miners.com:9090 t1NKFhdtaeazcgDWXaMCCVG3k2exkLp9R31" 
+# setup_zelcash="TON ton Gminer gminer 125_4" 
+# zelcash="zel.2miners.com:9090 t1NKFhdtaeazcgDWXaMCCVG3k2exkLp9R31" 
 
 printf "\n"
 echo -e "\e[34m***************************************************************"
@@ -67,7 +119,7 @@ for option in "${file[@]}"; do
     	software=${option}
     	selectedSoftwareCrypto=(${!software})
     	#stringArray=($sentence)
-    	printf $selectedSoftwareCrypto
+    
     	printf "\n"
 	echo -e "\e[34m***************************************************************\e[0m"
 	echo -e "\e[34m***************************************************************\e[0m"
@@ -82,24 +134,8 @@ for option in "${file[@]}"; do
      	idx2=0
      	for crypto in "${selectedSoftwareCrypto[@]}"; do
      	   if [[ ${selectedCrypto[idx2]} == true ]]; then 	
-     	
-     		it="setup_"${crypto}
-     		cryptoSetup=(${software}"_"${crypto})
-     		#stringArray2=($cryptoSetup)
-     		
-     		
-     		# it2=${software}"_"${crypto}
-     		# sentence4="${!it2}"
-     	
-     	
-     		# sentence3="${!it}"
-     		# stringArray2=($sentence3)
-     		# echo "Setup ${stringArray2[0]} with ${software}"
-     		# echo "***************************************************************"
+     		cryptoSetup=(${crypto})
      		sudo ./${software}-setup.sh ${!cryptoSetup}
-     		# printf "\n"
-     	    #     printf "\n"
-     	
      	   fi
      
      	    ((idx2++))

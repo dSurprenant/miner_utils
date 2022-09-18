@@ -1,0 +1,48 @@
+# Class named "obj" for bash Object
+
+# property
+obj_properties=()
+
+# properties IDs
+algo=0
+name=1
+adress=0
+obj.sayHello(){
+    echo Hello
+}
+
+obj.property(){
+    if [ "$2" == "=" ]
+    then
+        obj_properties[$1]=$3
+    else
+        echo ${obj_properties[$1]}
+    fi
+}
+
+obj.algo(){
+    if [ "$1" == "=" ]
+    then
+        obj.property algo = $2
+    else
+        obj.property algo
+    fi
+}
+
+obj.name(){
+    if [ "$1" == "=" ]
+    then
+        obj.property name = $2
+    else
+        obj.property name
+    fi
+}
+
+obj.adress(){
+    if [ "$1" == "=" ]
+    then
+        obj.property adress = $2
+    else
+        obj.property adress
+    fi
+}
