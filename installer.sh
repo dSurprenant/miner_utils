@@ -36,6 +36,8 @@ eth+=" eth.2miners.com:2020"
 eth+=" ${defaultAddress}"
 eth+=" ${rigName}"
 
+
+
 ravencoin="ravencoin kawpow"
 ravencoin+=" rvn.2miners.com:6060"
 ravencoin+=" ${defaultAddress}"
