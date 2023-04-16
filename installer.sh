@@ -124,7 +124,7 @@ idx=0
 mkdir -p /usr/bin/minerUtils
 for option in "${file[@]}"; do
     if [[ ${result[idx]} == true ]]; then 
-    	if [$1 == true]; then
+    	if [ $1 == true ]; then
 			#install software
 			sudo ./software/${option}.sh;
     	fi
