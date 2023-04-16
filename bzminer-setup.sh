@@ -16,7 +16,7 @@ otherARGS=${otherARGS:-}
 
 
 sudo echo "#!/bin/bash
-/usr/bin/$1/bzminer -a $2 -p stratum+tcp://$poolServer -w $wallet.$name $otherARGS
+/usr/bin/$1/bzminer/bzminer -a $2 -p stratum+tcp://$poolServer -w $wallet.$name $otherARGS
 " > /usr/bin/minerUtils/$serviceName.sh
 chmod +x /usr/bin/minerUtils/$serviceName.sh
 sudo ./service.sh $serviceName $1 $3  
