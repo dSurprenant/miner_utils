@@ -4,9 +4,9 @@
 . system.h
 source input.sh
 
-defaultAddress="0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
+defaultAddress=""
 
-rigName="ViveLeQuebec"
+rigName=""
 # defaultAddress = "0x825e53fcb57d2caa791ebf0bb4c2a64773ee1f1b"
 
 # obj raven 
@@ -54,11 +54,21 @@ kaspa+=" pool.ca.woolypooly.com:3112"
 kaspa+=" ${defaultAddress}"
 kaspa+=" ${rigName}"
 
+radiant="radiant radiant"
+radiant+=" pool.ca.woolypooly.com:3122"
+radiant+=" ${defaultAddress}"
+radiant+=" ${rigName}"
+
+nexa="nexa nexa"
+nexa+=" pool.ca.woolypooly.com:3124"
+nexa+=" ${defaultAddress}"
+nexa+=" ${rigName}"
+
 software_options=(   "Gminer"  "TREX"  "LOL MINER", "BZMiner" )
 file=(   "gminer"  "trex"  "lolminer", "bzminer" )
 gminer="cortex etc eth ravencoin zel"
 trex="ergo eth cortex firo" 
-bzminer="raven kaspa" 
+bzminer="raven kaspa radiant nexa" 
 lolminer="eth cortex" 
 
 software_selection=( "false"      "false"      "false"    )
