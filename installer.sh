@@ -124,10 +124,10 @@ idx=0
 mkdir -p /usr/bin/minerUtils
 for option in "${file[@]}"; do
     if [[ ${result[idx]} == true ]]; then 
-    	
-    	#install software
-    	sudo ./software/${option}.sh;
-    	
+    	if [$1 == true]; then
+			#install software
+			sudo ./software/${option}.sh;
+    	fi
     	software=${option}
     	selectedSoftwareCrypto=(${!software})
     	#stringArray=($sentence)
